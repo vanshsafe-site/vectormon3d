@@ -98,8 +98,6 @@ footer a{color:var(--leaf)}
 .loader{display:flex;flex-direction:column;align-items:center;gap:16px;font-family:'Pixelify Sans',monospace;color:var(--leaf)}
 .spinner{width:48px;height:48px;border:4px solid rgba(166,212,111,.25);border-top-color:var(--leaf);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.back{position:fixed;top:16px;right:16px;z-index:60;display:none;padding:.5rem 1rem;font-size:.95rem;box-shadow:0 3px 0 #9c2a24}
-.back.active{display:block}
 
 @media(max-width:820px){
   .loop{grid-template-columns:1fr}
@@ -169,7 +167,6 @@ footer a{color:var(--leaf)}
 <div id="app">
   <div class="loader" role="status" aria-live="polite"><div class="spinner"></div><p>Loading Vectormon Wilds...</p></div>
 </div>
-<button class="btn back" id="back-to-home" onclick="backToHome()">← Back to home</button>
 
 <footer id="footer">
   <div class="wrap"><p>&copy; 2026 Vectormon Wilds. Built by <a href="https://github.com/vanshsafe-site">vanshsafe-site</a>.</p></div>
@@ -181,14 +178,12 @@ window.startGame=function(){
   document.body.classList.add('game-active');
   landing.forEach(id=>document.getElementById(id).classList.add('hidden'));
   document.getElementById('app').classList.add('active');
-  document.getElementById('back-to-home').classList.add('active');
   import('/src/main.js').catch(err=>{console.error('Failed to load game:',err);backToHome();});
 };
 window.backToHome=function(){
   document.body.classList.remove('game-active');
   landing.forEach(id=>document.getElementById(id).classList.remove('hidden'));
   document.getElementById('app').classList.remove('active');
-  document.getElementById('back-to-home').classList.remove('active');
   window.scrollTo(0,0);
 };
 
