@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vectormon3d.vercel.app/sitemap.xml

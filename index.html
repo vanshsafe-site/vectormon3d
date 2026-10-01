@@ -2,21 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Vectormon Wilds - 3D Creature Collection Game | Play Online Free</title>
+    <meta name="description" content="Explore the Great Forest, discover unique Vectormons, and build your collection in this immersive 3D browser-based creature collection game. Play free online now!" />
+    <meta name="keywords" content="3D game, creature collection, Vectormon, browser game, WebGL, interactive 3D, online game, free to play" />
+    <meta name="author" content="vanshsafe-site" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#15261e" />
-    <meta name="description" content="Explore the Great Forest, discover Vectormons, and bring your finds home." />
+    <link rel="canonical" href="https://vectormon3d.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vectormon3d.vercel.app/" />
+    <meta property="og:title" content="Vectormon Wilds - 3D Creature Collection Game" />
+    <meta property="og:description" content="Explore the Great Forest, discover unique Vectormons, and build your personal collection in this stunning 3D browser game." />
+    <meta property="og:image" content="https://vectormon3d.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vectormon Wilds - 3D Creature Collection Game" />
+    <meta property="og:site_name" content="Vectormon Wilds" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://vectormon3d.vercel.app/" />
+    <meta name="twitter:title" content="Vectormon Wilds - 3D Creature Collection Game" />
+    <meta name="twitter:description" content="Explore the Great Forest, discover unique Vectormons, and build your collection. Play free now!" />
+    <meta name="twitter:image" content="https://vectormon3d.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Vectormon Wilds Game" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Vectormon Wilds",
+      "description": "Explore the Great Forest, discover unique Vectormons, and build your collection in this immersive 3D browser-based creature collection game.",
+      "url": "https://vectormon3d.vercel.app",
+      "applicationCategory": "GameApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "vanshsafe-site"
+      },
+      "inLanguage": "en-US",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires JavaScript and WebGL support"
+    }
+    </script>
+
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Vectormon Wilds" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>Vectormon Wilds</title>
+
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        width: 100%;
+        height: 100%;
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #15261e 0%, #0a1410 100%);
+        color: #e0e0e0;
+        overflow: hidden;
+      }
+      #app {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        font-family: 'DM Mono', monospace;
+        color: #00d9ff;
+        font-size: 14px;
+      }
+      .spinner {
+        width: 48px;
+        height: 48px;
+        border: 3px solid rgba(0, 217, 255, 0.2);
+        border-top-color: #00d9ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app">
+      <div class="loader" role="status" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Loading Vectormon Wilds...</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
